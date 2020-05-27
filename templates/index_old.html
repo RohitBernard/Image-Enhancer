@@ -1,0 +1,48 @@
+<html>  
+<head>  
+    <title>Image Enhancer</title>  
+    <style>
+    	.loader {
+    		border: 16px solid #f3f3f3;
+    		border-radius: 50%;
+    		border-top: 16px solid #3498db;
+    		text-align: center;
+    		width: 120px;
+    		height: 120px;
+    		display: none;
+    		-webkit-animation: spin 2s linear infinite; /* Safari */
+    		animation: spin 2s linear infinite;
+    	}
+    	/* Safari */
+    	@-webkit-keyframes spin {
+    		0% { -webkit-transform: rotate(0deg); }
+    		100% { -webkit-transform: rotate(360deg); }
+    	}
+    	@keyframes spin {
+    		0% { transform: rotate(0deg); }
+    		100% { transform: rotate(360deg); }
+    	}
+    </style>
+</head>  
+<body>  
+	<div id="loading" class="loader"></div>
+	<div id="content">
+		<form action = "/download" method = "post" enctype="multipart/form-data">  
+			<input type="file" name="file" accept="image/*"/><br><br>
+			<input type = "submit" value="Upload" onclick="toggle_visibility('loading','content');">  
+		</form>
+	</div>
+<script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+   		function toggle_visibility(id1,id2) {
+   		    var e = document.getElementById(id1);
+   		    var f = document.getElementById(id2);
+   		    e.style.display = 'block'
+   		    f.style.display = 'none'
+   		}
+</script>
+</body>  
+</html>  

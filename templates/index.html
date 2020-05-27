@@ -1,0 +1,29 @@
+<html>  
+<head>  
+    <title>Image Enhancer</title>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>  
+<body> 
+	<h1>Image Enhancher</h1>
+	<div id="loader" style="display: none;" ></div>
+	<div id="content" class="abc">
+		<p>
+			Hey! Welcome to <b>Image Enchancer</b>.
+			</br><br/>Image Enhancer aims to generate a visually pleasing high-resolution (HR) image from its degraded low-resolution (LR) measurement.
+			<br/><br/>Click on the "Choose File" button to upload a file:<br/>
+		</p>
+		<form action = "/download" method = "post" enctype="multipart/form-data">  
+			<input type="file" name="file" accept="image/*"/><br><br>
+			<input type = "submit" value="Upload" onclick="toggle_visibility();">  
+		</form>
+	</div>
+	<script type="text/javascript">
+		function toggle_visibility() {
+   		    var e = document.getElementById('loader');
+   		    var f = document.getElementById('content');
+   		    e.style.display = 'block'
+   		    f.style.display = 'none'
+   		}
+   	</script>
+</body>  
+</html>  
